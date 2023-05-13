@@ -1,13 +1,18 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { add } from 'rusty-react'
+import init, { add } from 'rusty-react'
 
 export default function Home() {
 
 	const [result, setResult] = useState<number>(0)
 	useEffect(() => {
-		setResult(add(1, 2))
+		// setResult(add(1, 2))
+		// console.log("add(1, 2)", add(1, 2))
+		init().then(() => {
+			console.log("wasm.add(1, 2)", add(1, 2))
+			setResult(add(4, 2))
+		})
 	}, [])
 
 	return (

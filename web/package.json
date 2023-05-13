@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+	"dev:wasm": "cd rusty-react && wasm-pack build --target web --out-dir pkg && cd .. && next dev",
     "build": "next build",
     "build:wasm": "cd rusty-react && wasm-pack build --target web --out-dir pkg",
+	"build:all": "next build && cd rusty-react && wasm-pack build --target web --out-dir pkg", 
     "start": "next start",
     "lint": "next lint"
   },

@@ -2,7 +2,7 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn add(left: usize, right: usize) -> usize {
-    return left + right
+    left + right
 }
 
 #[cfg(test)]
